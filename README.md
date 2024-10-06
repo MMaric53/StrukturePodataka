@@ -1,3 +1,3 @@
 # StrukturePodataka
 Laboratorijske vježbe
-Promjena broj 1
+Promjena broj 2
