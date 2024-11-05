@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #define ERROR_OF -1
-#define BUFFER_SIZE 2048
+#define BUFFER_SIZE 1024
 
 position create_person(char* fname, char* lname, int birth_year);
 
@@ -97,3 +97,30 @@ toDelete=previous->next;
 previous->next=toDelete->next;
 free(toDelete);
 */
+
+//Zad 4.
+
+int InsertSorted(Position head, Position nE) // nE = New Element
+{
+	Position temp = head;
+	while (temp->newxt != NULL && temp->temp->exp < nE->exp) {
+		temp = temp->next;
+	}
+	if (temp->next == NULL||temp->next->exp!=nE->exp)
+		InsertAfter(temp, nE);
+	else
+	{
+		int resultcoeff = nE->coeff + temp->next->coeff;
+		if (resultcoeff == 0) { DeleteAfter(temp); free(nE); }
+		else { temp->next->coeff = resultcoeff; free(nE); }
+	}
+}
+
+int ReadPol()
+{
+	fgets(buffer, BUFFER_SIZE, file);
+	while (strlen(buffer) > 0) {
+		int status = sscanf(buffer, " %d %d %n", &c, &e, &numBytes); // status = num of var sscanf succ read
+		buffer = buffer + numBytes;
+	}
+}
