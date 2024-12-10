@@ -1,0 +1,4 @@
+2024-12-11
+Jabuka, 2, 3
+Banana, 3, 5
+Smokva, 6, 1
